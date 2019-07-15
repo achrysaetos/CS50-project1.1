@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+        {% block body %}
+        <div class="container">
+                <div class="row">
+                <div class="col-5">
+                    <br>
+                    {% if count <25 %}
+                        <h6>{{ count }} results. Click for more information.</h6>
+                    {%else%}
+                        <h6>Over {{ count }} results. Please narrow your search.</h6>
+                    {% endif %}
+                    <ul>
+                        {% for f,l in lookup %}
+                            <li>
+                                <a href={% print ("%s" %l) %}>
+                                    <i>{{f.title}}</i> by {{f.author}}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row-5">
+                        <br>
+                        <h6 style="visibility: hidden;">Reviews!</h6>
+                        <ul>
+                            {% for f,l in lookup %}
+                                <li>
+                                    <a href="{{url_for('selection', isbn=f.isbn)}}" method="GET">
+                                        <b>{{f.isbn}}</b>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                </div>
+                </div>
+                </div>
+        {% endblock %}

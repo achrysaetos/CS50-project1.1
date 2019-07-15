@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+        {% block body %}
+        <div class="container">
+            <br><br>
+                    {% for f in results %}
+                        <h1>{{f.title}}</h1>
+                        <h2>by {{f.author}}</h2>
+                        <h3>ISBN: {{f.isbn}}</h3>
+                        <h3>PUBLISHED: {{f.year}}</h3>
+                        <br><br>
+                        {% if stars_converted<4 %}
+                            <h4>{{stars_converted}}/5</h4>
+                        {%else%}
+                            <h5>{{stars_converted}}/5</h5>
+                        {% endif %}
+                        
+
+                    {% endfor %}
+        </div>
+        {% endblock %}

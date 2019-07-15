@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Amazon</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <style>
+            h1{
+                font-size: 45px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color:rgb(32, 32, 32);
+                text-align: center;
+                font-style: bold;
+            }
+            h2{
+                font-size: 30px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color:rgb(32, 32, 32);
+                text-align: center;
+                font-style: italic;
+            }
+            h3{
+                font-size: 20px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color:rgb(32, 32, 32);
+                font-style: bold;
+            }
+            h4{
+                font-size: 150px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color:darkred;
+                text-align: center;
+                font-style: bold;
+            }
+            h5{
+                font-size: 150px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color:darkgreen;
+                text-align: center;
+                font-style: bold;
+            }
+            body {
+                background-attachment: fixed;
+                background-image: linear-gradient(to bottom, #fff, rgba(0, 0, 0, 0)), url(https://wallpapercave.com/wp/wp2036912.png);
+                background-size: cover;
+            }
+            
+            button:hover {
+                background-color: rgba(0, 255, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">ACHRYSAETOS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('complete_listing')}}">Complete Listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('feeling_crazy')}}">Recommend a Book!</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                    <form action="{{url_for('login')}}" method="POST">
+                        <button>Log Out</button>
+                    </form>
+                    
+              </span>
+            </div>
+        </nav>
+
+        {% block body %}
+        {% endblock %}
+
+    </body>
+</html>
