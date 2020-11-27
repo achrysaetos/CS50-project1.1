@@ -1,7 +1,8 @@
 # project1
 
-using sql, orm's and api's
+Simple book review web app, using sql, orm's and the goodreads api.
 
-(1) set public key in apis.py
-(2) run "export DATABASE_URL=..."
-(3) run "flask run"
+**To start:**
+1. set public key in apis.py
+2. run "export DATABASE_URL=..."
+3. run "flask run"
